@@ -1177,6 +1177,8 @@ section,
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  filter:blur(5px);
+
 }
 
 .call-to-action:before {
@@ -1219,6 +1221,7 @@ section,
 .call-to-action .cta-btn:hover {
   background: var(--accent-color);
   border: 2px solid var(--accent-color);
+
 }
 
 /*--------------------------------------------------------------
