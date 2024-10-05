@@ -1423,12 +1423,24 @@ section,
 --------------------------------------------------------------*/
 .team {
   --default-color: #ffffff;
+
 }
+.row .team {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+.team .col-lg-4 {
+  max-width: 100%; /* Verhindert Überlappen bei kleineren Bildschirmen */
+}
+
 
 .team .member {
   text-align: center;
   position: relative;
   height: 100%;
+
 }
 
 .team .member .member-info {
