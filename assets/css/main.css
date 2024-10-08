@@ -58,9 +58,9 @@ body {
   background-color: var(--background-color);
   font-family: var(--default-font);
 }
-body {
-
-}
+/*-----------------------------------------------------------------
+#Infinite Scroll
+------------------------------------------------------------------*/
 /* Slider container */
 .slider {
   overflow: hidden; /* Hides the extra slides */
