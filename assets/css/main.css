@@ -58,49 +58,54 @@ body {
   background-color: var(--background-color);
   font-family: var(--default-font);
 }
-body {
 
-}
+/*------------------------------------------------------------
+# Infinite scroll
+------------------------------------------------------------*/
 /* Slider container */
 .slider {
   overflow: hidden; /* Hides the extra slides */
   position: relative;
+  max-width: 100%;
+  padding-block: 1%;
 }
 
 /* Slide track (animation) */
 .slide-track {
   display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 200%;
   animation: scroll 20s linear infinite;
 }
 
+/* Animation to move slides continuously */
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%); /* Moves the slides left by 50% of total track width */
+  to {
+    transform: translateX(-70%);
   }
 }
 
 /* Individual slide */
 .slide {
-  min-width: 33.33%; /* Adjust width depending on the number of items */
+  min-width: 10%; /* Adjust width depending on the number of items */
   flex-shrink: 0;
   box-sizing: border-box;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
+
 /* Hover effect: Pause the animation */
 .slider:hover .slide-track {
   animation-play-state: paused;
 }
 
-/* Add some styles for services */
+/* Service item styling */
 .service-item {
   background-color: var(--background-color);
-  padding: 20px;
+  padding: 2rem;
   border-radius: 10px;
-
   display: flex;
   align-items: center;
 }

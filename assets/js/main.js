@@ -230,47 +230,6 @@
 
     })();
 
-    window.onload = function() {
-      // Überprüfen, ob ein Anker in der URL vorhanden ist
-      const hash = window.location.hash.substring(1); // Entfernt das '#' vom Anker
-      if (hash) {
-        // Zeige den Inhalt basierend auf dem Anker
-        loadServiceContent(hash);
-      } else {
-        // Standardinhalt anzeigen
-        loadServiceContent('web-development-content');
-      }
-    };
-
-    // Funktion zum Laden des Inhalts und Markieren des aktiven Links
-    function loadServiceContent(contentId) {
-      // Alle Service-Details-Bereiche ausblenden
-      let allContents = document.getElementsByClassName('service-content');
-      for (let i = 0; i < allContents.length; i++) {
-        allContents[i].style.display = 'none';
-      }
-
-      // Den angeforderten Bereich anzeigen
-      let contentToShow = document.getElementById(contentId);
-      if (contentToShow) {
-        contentToShow.style.display = 'block'; // Zeige den Inhalt
-      } else {
-        // Fallback, falls der Anker nicht korrekt ist (könnte man anpassen)
-        document.getElementById('web-development-content').style.display = 'block';
-      }
-
-      // Alle Links in der Navigation deaktivieren
-      const serviceLinks = document.querySelectorAll('.services-list a');
-      serviceLinks.forEach(link => {
-        link.classList.remove('active');
-      });
-
-      // Den aktiven Link anhand des Hashes markieren
-      const activeLink = document.querySelector(`.services-list a[href="#${contentId}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-      }
-    }
 
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -308,9 +267,59 @@
           }
         });
       });
+      function setActiveLink(link) {
+        serviceLinks.forEach(function(l) {
+          l.classList.remove('active');
+        });
+        link.classList.add('active');
+      }
+      // Funktion, um den richtigen Inhalt anzuzeigen
+      function showContent(targetId) {
+        hideAllContents();
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.style.display = 'block';
+        }
+      }
+
+
+
+      // Funktion, um Hash zu überprüfen und den entsprechenden Inhalt zu laden
+      function handleHashChange() {
+        const hash = window.location.hash.substring(1); // Entfernt das '#' vom Hash
+        if (hash) {
+          const targetLink = Array.from(serviceLinks).find(link => link.getAttribute('href').substring(1) === hash);
+          if (targetLink) {
+            setActiveLink(targetLink);
+            showContent(hash);
+          }
+        } else {
+          // Wenn kein Hash vorhanden ist, Standardinhalt anzeigen
+          if (serviceLinks.length > 0) {
+            serviceLinks[0].click();
+          }
+        }
+      }
 
       // Optional: Standardmäßig den ersten Inhalt anzeigen
       if (serviceLinks.length > 0) {
         serviceLinks[0].click();  // Simuliere den Klick auf den ersten Link
       }
+
+      // Event-Listener für jeden Link hinzufügen
+      serviceLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1); // Hash ohne '#'
+          setActiveLink(this);
+          showContent(targetId );
+        });
+      });
+
+
+      // Beim Laden der Seite den Hash prüfen und den Inhalt anzeigen
+      handleHashChange();
+
+      // Hinzufügen eines Event-Listeners, um Änderungen des Hash-Wertes zu überwachen
+      window.addEventListener('hashchange', handleHashChange);
     });
