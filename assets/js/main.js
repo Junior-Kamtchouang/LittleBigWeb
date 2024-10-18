@@ -231,7 +231,9 @@
     })();
 
 
-
+    /**
+     * Changing sercices-content
+     */
     document.addEventListener('DOMContentLoaded', function() {
       // Alle Links und Inhalte sammeln
       const serviceLinks = document.querySelectorAll('.services-list a');
@@ -322,4 +324,96 @@
 
       // Hinzufügen eines Event-Listeners, um Änderungen des Hash-Wertes zu überwachen
       window.addEventListener('hashchange', handleHashChange);
+    });
+
+    /**
+     * Changing portfolio-content
+     */
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Alle Links und Inhalte sammeln
+      const portfolioLinks = document.querySelectorAll('.portfolio-list a');
+      const portfolioContents = document.querySelectorAll('.portfolio-content');
+
+      // Funktion, um alle Inhalte zu verstecken
+      function hideAllPortfolioContents() {
+        portfolioContents.forEach(function(content) {
+          content.style.display = 'none';
+        });
+      }
+
+      // Event-Listener für jeden Link hinzufügen
+      portfolioLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Aktiven Link markieren und andere Links zurücksetzen
+          portfolioLinks.forEach(function(l) {
+            l.classList.remove('active');
+          });
+          this.classList.add('active');
+          // Alle Inhalte verstecken
+          hideAllPortfolioContents();
+          // Den entsprechenden Inhalt basierend auf dem angeklickten Link anzeigen
+          const targetId = this.textContent.trim().toLowerCase().replace(/\s+/g, '-') + '-content';
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.style.display = 'block';
+          }
+        });
+      });
+
+      function setActivePortfolioLink(link) {
+        portfolioLinks.forEach(function(l) {
+          l.classList.remove('active');
+        });
+        link.classList.add('active');
+      }
+
+      // Funktion, um den richtigen Inhalt anzuzeigen
+      function showPortfolioContent(targetId) {
+        hideAllPortfolioContents();
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.style.display = 'block';
+        }
+      }
+
+      // Funktion, um Hash zu überprüfen und den entsprechenden Inhalt zu laden
+      function handlePortfolioHashChange() {
+        const hash = window.location.hash.substring(1); // Entfernt das '#' vom Hash
+        if (hash) {
+          const targetLink = Array.from(portfolioLinks).find(link => link.getAttribute('href').substring(1) === hash);
+          if (targetLink) {
+            setActivePortfolioLink(targetLink);
+            showPortfolioContent(hash);
+          }
+        } else {
+          // Wenn kein Hash vorhanden ist, Standardinhalt anzeigen
+          if (portfolioLinks.length > 0) {
+            portfolioLinks[0].click();
+          }
+        }
+      }
+
+      // Optional: Standardmäßig den ersten Inhalt anzeigen
+      if (portfolioLinks.length > 0) {
+        portfolioLinks[0].click(); // Simuliere den Klick auf den ersten Link
+      }
+
+      // Event-Listener für jeden Link hinzufügen
+      portfolioLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1); // Hash ohne '#'
+          setActivePortfolioLink(this);
+          showPortfolioContent(targetId);
+        });
+      });
+
+      // Beim Laden der Seite den Hash prüfen und den Inhalt anzeigen
+      handlePortfolioHashChange();
+
+      // Hinzufügen eines Event-Listeners, um Änderungen des Hash-Wertes zu überwachen
+      window.addEventListener('hashchange', handlePortfolioHashChange);
     });

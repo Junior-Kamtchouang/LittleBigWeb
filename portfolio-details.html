@@ -42,13 +42,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -75,67 +69,107 @@
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
 
         <div class="row gy-4">
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/final-trip-presentation-image.png" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.png" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/Business-Card-QR-Code.jpg" alt=""  style=" height: 600px; width: 600px;">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/QR-Code-Final-Trip-Website.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-list">
+              <a href="#final-trip-project-content" class="active">The Final Trip Website</a>
+              <a href="#emas-project-content">Emas Ingernieure Website</a>
+              <a href="#business-card-project-content">Business Card</a>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
               <h2>Exercitationem repudiandae officiis neque suscipit</h2>
               <p>
                 Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
               </p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+
+
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+              <!-- final-trip Project Content (Initially hidden) -->
+              <div id="final-trip-project-content" class="portfolio-content">
+                <h3>Final Trip Projekt</h3>
+                <ul>
+                  <li><strong>Kategorie:</strong> Webdesign & Entwicklung</li>
+                  <li><strong>Kunde:</strong> Final Trip Network</li>
+                  <li><strong>Projektzeitraum:</strong> 17. Oktober 2024</li>
+                  <li><strong>Projekt-URL:</strong> <a href="https://www.final-trip.org">www.final-trip.org</a></li>
+                </ul>
+                <img src="assets/img/portfolio/final-trip-presentation-image.png" alt="" class="img-fluid services-img">
+                <h3>Über das Projekt</h3>
+                <p>Unsere Arbeit mit dem Final Trip Network zielte darauf ab, eine Plattform zu schaffen, die der afrikanischen, insbesondere der kamerunischen Gemeinschaft, hilft. Wir wollten die finanzielle Last durch kollektive Beteiligung verringern und den Prozess der Repatriierung würdevoll und menschlich gestalten.</p>
+                <h3>Unsere Vorgehensweise</h3>
+                <p>Von Anfang an war uns klar, dass dieses Projekt eine tiefere Bedeutung hatte. Wir haben uns entschieden, Django für die Entwicklung zu verwenden, um eine robuste und skalierbare Lösung zu bieten. Die Entscheidung für Django brachte jedoch eine gewisse Komplexität und höhere Kosten mit sich, aber das Ergebnis war es wert.</p>
+                <p>Während der gesamten Entwicklungsphase haben wir eng mit dem Final Trip Network zusammengearbeitet. Regelmäßiges Feedback war entscheidend, um sicherzustellen, dass wir alle Anforderungen erfüllten und Anpassungen zeitnah umsetzen konnten. Diese Zusammenarbeit verlängerte den Projektzeitraum ein wenig, aber sie garantierte ein Endprodukt, das den hohen Ansprüchen gerecht wurde.</p>
+                <p>Wir sind besonders stolz auf die Funktionen, die wir implementieren konnten. Von der einfachen Mitgliedsanmeldung bis hin zur detaillierten Auflistung der angebotenen Dienstleistungen – jede Funktion wurde sorgfältig durchdacht und entwickelt, um den Nutzern die bestmögliche Erfahrung zu bieten.</p>
+                <h3>Herausforderungen und Lösungen</h3>
+                <ul>
+                  <li><strong>Komplexität und Kosten:</strong> Die Entwicklung mit Django war komplex und teurer, bot aber die notwendige Stabilität und Flexibilität für eine langfristige Lösung.</li>
+                  <li><strong>Enge Zusammenarbeit:</strong> Regelmäßiges Feedback vom Kunden war entscheidend für den Erfolg des Projekts. Diese Zusammenarbeit stellte sicher, dass wir die Erwartungen erfüllten und übertrafen.</li>
+                  <li><strong>Benutzerzentrierung:</strong> Unser Fokus lag darauf, eine benutzerfreundliche Plattform zu schaffen, die sowohl funktional als auch emotional ansprechend ist.</li>
+                </ul>
+              </div>
+
+              <!-- Emas Ingenieure content(Initaially hidden) -->
+              <div id="emas-project-content" class="portfolio-content" style="display: none;">
+                <h3>EMAS Ingenieure GmbH Projekt</h3>
+                <ul>
+                  <li><strong>Kategorie:</strong> Webdesign & Entwicklung</li>
+                  <li><strong>Kunde:</strong> EMAS Ingenieure GmbH</li>
+                  <li><strong>Projektzeitraum:</strong> 17. Oktober 2024</li>
+                  <li><strong>Projekt-URL:</strong> <a href="https://www.emas-ing.com">www.emas-ing.com</a></li>
+                </ul>
+                <img src="assets/img/portfolio/product-1.png" alt="" class="img-fluid services-img">
+                <h3>Über das Projekt</h3>
+                <p>Unsere Arbeit mit der EMAS Ingenieure GmbH zielte darauf ab, eine professionelle und ansprechende Online-Präsenz zu schaffen, die die vielfältigen Dienstleistungen und Kernkompetenzen des Unternehmens im Bereich Ingenieurleistungen, Bauüberwachung und TGA hervorhebt.</p>
+                <h3>Unsere Vorgehensweise</h3>
+                <p>Beim Start des Projekts war uns klar, dass Präzision und Benutzerfreundlichkeit im Vordergrund stehen mussten. Gemeinsam mit EMAS Ingenieure entwickelten wir eine strukturierte und leicht navigierbare Webseite, die die Professionalität und Expertise des Unternehmens widerspiegelt.</p>
+                <p>Die Entscheidung, die Webseite mit modernsten Webtechnologien und einem responsiven Design zu erstellen, brachte eine gewisse Komplexität mit sich. Trotzdem war es unsere oberste Priorität, eine Seite zu schaffen, die auf allen Geräten gleich gut funktioniert und dabei die hohen Erwartungen unseres Kunden erfüllt.</p>
+                <p>Unsere Zusammenarbeit mit EMAS Ingenieure war geprägt von kontinuierlichem Feedback und enger Kommunikation. Diese iterative Herangehensweise stellte sicher, dass alle Anforderungen erfüllt wurden und die Webseite genau den Bedürfnissen des Unternehmens entsprach.</p>
+                <h3>Besonderheiten des Projekts</h3>
+                <ul>
+                  <li><strong>Umfangreiche Dienstleistungen:</strong> Darstellung der vielfältigen Ingenieurleistungen und Spezialisierungen im Bahnbereich und TGA.</li>
+                  <li><strong>Effiziente Navigation:</strong> Eine klar strukturierte Seite, die den Besuchern ermöglicht, schnell zu den benötigten Informationen zu gelangen.</li>
+                  <li><strong>Kundenfeedback:</strong> Regelmäßige Feedback-Schleifen mit EMAS Ingenieure zur Anpassung und Verbesserung der Webseite.</li>
+                  <li><strong>Responsives Design:</strong> Optimierung der Seite für alle Geräte, um eine nahtlose Benutzererfahrung zu gewährleisten.</li>
+                  <li><strong>Sicherheit und Gesundheit:</strong> Betonung auf Sicherheitsvorschriften und Gesundheitsvorkehrungen als zentrale Themenbereiche.</li>
+                </ul>
+              </div>
+
+
+
+
+              <!-- final-trip Project Content (Initially hidden) -->
+              <div id="business-card-project-content" class="portfolio-content" style="display: none;">
+                <h3>Business Card Projekt</h3>
+                <ul>
+                  <li><strong>Kategorie:</strong> Webdesign & Entwicklung</li>
+                  <li><strong>Kunde:</strong> Final Trip Network</li>
+                  <li><strong>Projektzeitraum:</strong> 17. Oktober 2024</li>
+                  <li><strong>Projekt-URL:</strong> <a href="https://www.final-trip.org">www.final-trip.org</a></li>
+                </ul>
+                <img src="assets/img/portfolio/Business-Card-QR-Code.jpg" alt="" class="img-fluid services-img">
+                <h3>Über das Projekt</h3>
+                <p>Unsere Arbeit mit dem Final Trip Network zielte darauf ab, eine Plattform zu schaffen, die der afrikanischen, insbesondere der kamerunischen Gemeinschaft, hilft. Wir wollten die finanzielle Last durch kollektive Beteiligung verringern und den Prozess der Repatriierung würdevoll und menschlich gestalten.</p>
+                <h3>Unsere Vorgehensweise</h3>
+                <p>Von Anfang an war uns klar, dass dieses Projekt eine tiefere Bedeutung hatte. Wir haben uns entschieden, Django für die Entwicklung zu verwenden, um eine robuste und skalierbare Lösung zu bieten. Die Entscheidung für Django brachte jedoch eine gewisse Komplexität und höhere Kosten mit sich, aber das Ergebnis war es wert.</p>
+                <p>Während der gesamten Entwicklungsphase haben wir eng mit dem Final Trip Network zusammengearbeitet. Regelmäßiges Feedback war entscheidend, um sicherzustellen, dass wir alle Anforderungen erfüllten und Anpassungen zeitnah umsetzen konnten. Diese Zusammenarbeit verlängerte den Projektzeitraum ein wenig, aber sie garantierte ein Endprodukt, das den hohen Ansprüchen gerecht wurde.</p>
+                <p>Wir sind besonders stolz auf die Funktionen, die wir implementieren konnten. Von der einfachen Mitgliedsanmeldung bis hin zur detaillierten Auflistung der angebotenen Dienstleistungen – jede Funktion wurde sorgfältig durchdacht und entwickelt, um den Nutzern die bestmögliche Erfahrung zu bieten.</p>
+                <h3>Herausforderungen und Lösungen</h3>
+                <ul>
+                  <li><strong>Komplexität und Kosten:</strong> Die Entwicklung mit Django war komplex und teurer, bot aber die notwendige Stabilität und Flexibilität für eine langfristige Lösung.</li>
+                  <li><strong>Enge Zusammenarbeit:</strong> Regelmäßiges Feedback vom Kunden war entscheidend für den Erfolg des Projekts. Diese Zusammenarbeit stellte sicher, dass wir die Erwartungen erfüllten und übertrafen.</li>
+                  <li><strong>Benutzerzentrierung:</strong> Unser Fokus lag darauf, eine benutzerfreundliche Plattform zu schaffen, die sowohl funktional als auch emotional ansprechend ist.</li>
+                </ul>
+              </div>
+
+
             </div>
           </div>
 
@@ -144,6 +178,8 @@
       </div>
 
     </section><!-- /Portfolio Details Section -->
+
+
 
   </main>
 

@@ -1392,6 +1392,40 @@ section,
   bottom: 20px;
 }
 
+.portfolio-list a.active {
+  font-weight: bold;
+  color: #fff; /* Oder jede Farbe, die du verwenden möchtest */
+  background-color: #007bff; /* Optionale Hintergrundfarbe */
+}
+
+
+.portfolio-details .portfolio-list {
+  background-color: var(--surface-color);
+  padding: 10px 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-list a {
+  display: block;
+  line-height: 1;
+  padding: 8px 0 8px 15px;
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 20px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-list a.active {
+  color: var(--heading-color);
+  font-weight: 700;
+  border-color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-list a:hover {
+  border-color: var(--accent-color);
+}
+
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
