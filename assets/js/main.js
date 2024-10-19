@@ -420,26 +420,25 @@
 
 
     // Modal öffnen
-    let modal = document.getElementById("myModal");
-    let btns = document.getElementsByClassName("btn-get-started");
-    let btn = document.getElementById("openModalButton");
-    let span = document.getElementsByClassName("close")[0];
+    document.addEventListener("DOMContentLoaded", function() {
+      let modal = document.getElementById("myModal");
+      let openBtns = document.querySelectorAll(".btn-get-started, #openModalButton");
+      let closeBtn = document.querySelector(".close");
 
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].onclick = function() {
-        modal.style.display = "block";
-      }
-    }
+      openBtns.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          modal.style.display = "block";
+        });
+      });
 
-    btn.onclick = function () {
-      modal.style.display = "block";
-    };
-
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target == modal) {
+      closeBtn.addEventListener("click", function() {
         modal.style.display = "none";
-      }
-    }
+      });
+
+      window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+
