@@ -417,3 +417,29 @@
       // Hinzufügen eines Event-Listeners, um Änderungen des Hash-Wertes zu überwachen
       window.addEventListener('hashchange', handlePortfolioHashChange);
     });
+
+
+    // Modal öffnen
+    let modal = document.getElementById("myModal");
+    let btns = document.getElementsByClassName("btn-get-started");
+    let btn = document.getElementById("openModalButton");
+    let span = document.getElementsByClassName("close")[0];
+
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].onclick = function() {
+        modal.style.display = "block";
+      }
+    }
+
+    btn.onclick = function () {
+      modal.style.display = "block";
+    };
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
